@@ -1,0 +1,147 @@
+<div class="main-container">
+    <div class="row d-flex justify-content-center mt-4">
+        <div class="col-xl-6 col-md-9 col-12">
+            <h2>Update Actor</h2>
+
+
+     
+
+
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="md-form">
+                    <label for="form1" class="label-name">Nom</label>
+                    <input mdbInput type="text" name="name" autocomplete="off" placeholder="Doe" id="form1"
+                        class="form-control" formControlName="name" />
+                </div>
+
+                <div class="md-form">
+                    <label for="form2" class="label-firstname">Prénom</label>
+                    <input mdbInput type="text" name="firstname" autocomplete="off" placeholder="John" id="form2"
+                        class="form-control" formControlName="firstname" />
+                </div>
+
+
+                <div class="md-form">
+                    <label for="form4" class="label-birth">Date de naissance</label>
+                    <input mdbInput type="date" name="birth" autocomplete="off" id="form4" class="form-control"
+                        formControlName="birth" />
+                </div>
+
+
+                <div class="md-form">
+                    <label class="custom-control-label" for="form6">Sexe</label>
+                    <select class="browser-default custom-select gender-input" name="genderId"
+                        formControlName="genderId" id="form6">
+                        <option *ngFor="let gender of genders" [ngValue]="gender.id">{{gender.name}}</option>
+                    </select>
+                </div>
+
+                <div class="md-form">
+                    <select class="browser-default custom-select country-input" name="countryId"
+                        formControlName="countryId" id="form8">
+                        <option *ngFor="let country of countries" [ngValue]="country.id">{{country.name}}</option>
+                    </select>
+                    <label class="custom-control-label select-label" for="form8">Pays</label>
+                </div>
+
+                <div class="md-form">
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <label class="custom-file-label pp-label" for="form7">Photo : {{ fileDataName }}</label>
+                            <input type="file" class="custom-file-input" id="form7"
+                                name="picture" formControlName="picture">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" mdbBtn class="relative waves-light bgc-blue send-button" mdbWavesEffect>
+                    éditer
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+<!--   
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1>Add Actor</h1>
+        </div>
+        <div class="col-6 text-right">
+            <button class="btn-primary" [routerLink]="['/admin/actor']" routerLinkActive="router-link-active" >Back</button>
+        </div>
+        <div class="col-12 text-center">
+            <form [formGroup]="actorForm" (ngSubmit)="onSubmit()">
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>First Name</label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <input type="text" name="firstname" formControlName="firstname" class="w-100"> <br>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Name</label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <input type="text" name="name" formControlName="name" class="w-100"> <br>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Birth</label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <input type="date" name="birth" formControlName="birth" class="w-100"> <br>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Gender</label>
+                     </div>
+                    <div class="col-12 col-sm-6 ">
+                        <span *ngFor="let gender of genders">
+                            <input id="{{ //gender.//id }}" type="radio" value="{{ //gender.//id }}" name="GenderId" formControlName="GenderId" class="mr-5">
+                            <label for="{{ //gender.//name }}" class="mr-5">{{ //gender.//name }}</label>
+                          </span>                     
+                    </div>
+                </div>
+
+              
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Country</label>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <select formControlName="CountryId" class="w-100">
+                            <option [ngValue]="null" disabled>Choose your country</option>
+                            <option *ngFor="let country of countries" [ngValue]="country.id">
+                             {{ //country.//name }}
+                            </option>
+                          </select> 
+                          <br>                    
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center mb-3">
+                    <div class="col-12 col-sm-3">
+                        <label>Picture</label>
+
+                    </div>
+                    <div class="col-12 col-sm-6 text-center">
+                        <img class="card-img-top" src="http://localhost:3000/{{ //avatar }}" class="w-50">
+                        <input type="file" (change)="onFileChanged($event)" formControlName="picture" name="picture" id="picture">
+                    </div>
+                </div>
+                  
+                <button type="submit" class="btn-primary mt-4" [disabled]="!actorForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+ -->

@@ -1,0 +1,11 @@
+<h1>Edit Gender</h1>
+
+<div class="container">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="gender.name" id="name" class="form-control">
+    </div>
+
+    <button type="submit" class="btn-btn-primary" [disabled]="!gender.name" (click)="onEdit()">Edit</button>
+    
+</div>

@@ -1,0 +1,70 @@
+@import '../../../styles.scss';
+
+html, body {
+  height:100%;
+}
+h1{
+  color: rgb(6, 70, 78);
+}
+
+.first-container{
+  display: flex;
+}
+
+.category-table{
+margin-left: 50px;
+margin-top: 20px;
+width: 40%;
+text-align: center;
+float: left;
+}
+
+
+.country-table{
+  margin-left: 50px;
+  margin-top: 20px;
+  width: 40%;
+  text-align: center;
+}
+
+.average{
+  font-size: 7rem;
+ 
+}
+
+// RANKING CATEGORY
+
+.ranking-category{
+  margin: 40px;
+  width: 25%;
+  padding-top: 300px;
+  float: left;
+}
+
+// GENDER ACTOR
+
+.gender-actor{
+  margin: 40px;
+  float: left;
+  width: 25%;
+  padding-top: 300px;
+}
+
+// AVERAGE NOTE
+
+.average-note{
+  background-color: rgb(6, 70, 78);
+  margin: 40px ;
+  padding-left: 0px;
+  width: 20%;
+  padding-top: 160px !important;
+  float: left; 
+}
+
+// TOP MOVIES
+.top-movies{
+  margin: 20px;
+  width: 35%;
+  margin-top: 900px;
+  
+}

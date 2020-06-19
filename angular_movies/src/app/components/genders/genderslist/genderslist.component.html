@@ -1,0 +1,16 @@
+<h1 class="h1-list">Liste des Genres</h1>
+<div class="col-12 text-center ">
+    <button class="btn-add rounded-lg" [routerLink]="['add']" routerLinkActive="router-link-active" >+ Add Gender</button>
+</div>
+<div class="container">
+    <mat-card class="list-card" *ngFor="let gender of genders">
+
+        <mat-card-title>{{ gender.name }}</mat-card-title>
+
+
+        <mat-card-actions>
+            <button mat-button [routerLink]="['edit', gender.id]">edit</button>
+            <button mat-button (click)="delete(gender.id)">delete</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

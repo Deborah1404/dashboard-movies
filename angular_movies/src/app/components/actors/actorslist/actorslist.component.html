@@ -1,0 +1,38 @@
+  
+<div class="container">
+    <div class="">
+        <div class="">
+            <h1 class="h1-list">
+                List of Actors
+            </h1>
+        </div>
+        <div class="col-12 text-right ">
+            <button class="btn-add rounded-lg" [routerLink]="['add']" routerLinkActive="router-link-active" >+ Add Actor</button>
+        </div>
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">FirstName</th>
+                    <th scope="col">Birthday</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let actor of actors">
+                        <td>{{ actor.id }}</td>
+                        <td>{{ actor.firstname }}</td>
+                        <td>{{ actor.name }}</td>
+                        <td>{{ actor.birth }}</td>
+                        <td>
+                            <button class="btn btn-warning mr-2" [routerLink]="['edit', actor.id]">Edit</button>
+                            <button class="btn btn-danger" (click)="delete(actor.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

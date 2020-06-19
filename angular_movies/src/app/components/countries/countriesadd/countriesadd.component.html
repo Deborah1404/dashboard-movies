@@ -1,0 +1,12 @@
+<h1 class="h1-list">Add Country</h1>
+
+<div class="container">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="country.name" id="name" class="form-control">
+    </div>
+
+    <button type="submit" class="btn-btn-primary" [disabled]="!country.name" (click)="onSave()">Add</button>
+    
+</div>
+

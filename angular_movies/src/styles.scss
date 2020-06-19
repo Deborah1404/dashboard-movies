@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { background-color: rgb(195, 213, 238) ;margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.h1-list{
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.btn-add{
+    background-color:rgb(3, 59, 73) ;
+    color:white;
+    padding: 6px;
+    border: none;
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

@@ -1,0 +1,15 @@
+<h1 class="h1-list">List of Countries</h1>
+<div class="col-12 text-center ">
+    <button class="btn-add rounded-lg" [routerLink]="['add']" routerLinkActive="router-link-active" >+ Add Country</button>
+</div>
+<mat-card class="list-card" *ngFor="let country of countries">
+
+    <mat-card-title>{{ country.name }}</mat-card-title>
+
+
+   <mat-card-actions>
+        <button mat-button [routerLink]="['edit', country.id]">edit</button>
+        <button mat-button (click)="delete(country.id)">delete</button>
+    </mat-card-actions> 
+</mat-card>
+

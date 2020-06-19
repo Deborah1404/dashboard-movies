@@ -1,0 +1,63 @@
+
+.main-container {
+    padding: 40px 0;
+}
+
+label{
+    margin-top: 20px;
+}
+.row {
+    margin-right: 0;
+}
+.send-button {
+    padding: 10px;
+    width: 20%;
+    font-weight: 500 !important;
+    color: black !important;
+    border: none;
+}
+.bgc-blue { 
+    background-color: #13a1ac !important; 
+}
+
+h2 {
+    margin: 0px 20px 20px 0;
+    padding: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.gender-input {
+    margin-top: 10px !important;
+}
+
+.country-input {
+    margin-top: 40px !important;
+}
+
+.select-label {
+    top: -90px !important;
+}
+
+.custom-file-label{
+    margin-top: -10px;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+    content: "Parcourir";
+}
+
+@media screen and (min-width:750px){
+    h2 {
+        display: inline-block;
+    }
+    .back-button {
+        margin-top: -5px;
+    }
+}
+
+div {
+    font-weight: 600;
+}

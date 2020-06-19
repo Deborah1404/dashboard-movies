@@ -1,0 +1,11 @@
+<h1 class="h1-list"> Add Category</h1>
+
+<div class="container">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="category.name" id="name" class="form-control">
+    </div>
+
+    <button type="submit" class="btn-btn-primary" [disabled]="!category.name" (click)="onSave()">Add</button>
+    
+</div>

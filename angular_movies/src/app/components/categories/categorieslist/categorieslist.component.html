@@ -1,0 +1,14 @@
+<h1 class="h1-list">Liste des Categories</h1>
+<div class="col-12 text-center ">
+    <button class="btn-add rounded-lg" [routerLink]="['add']" routerLinkActive="router-link-active" >+ Add Category</button>
+</div>
+<mat-card class="list-card" *ngFor="let category of categories">
+
+    <mat-card-title>{{ category.name }}</mat-card-title>
+
+
+   <mat-card-actions>
+        <button mat-button [routerLink]="['edit', category.id]">edit</button>
+        <button mat-button (click)="delete(category.id)">delete</button>
+    </mat-card-actions> 
+</mat-card>

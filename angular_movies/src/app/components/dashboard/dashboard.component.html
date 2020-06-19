@@ -1,0 +1,103 @@
+<div class="first-container">
+<div class="category-table">
+  <h1 class="h1-list">List of Categories</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ category.name }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="country-table">
+  <h1 class="h1-list">List of Countries</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ country.name }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div>
+  <div class="ranking-category bg-dark rounded-lg ">
+    <div class="text-center">
+        ranking of categories
+    </div>
+    <div>
+        <div *ngIf="barChartData.length > 0">
+            <canvas baseChart
+                [data]="barChartData"
+                [labels]="barChartLabels"
+                [chartType]="barChartType"
+                [legend]="false"
+                [options]="barChartOption">
+
+            </canvas>
+        </div>
+    </div>
+</div>
+</div>
+
+<div>
+  <div class="gender-actor bg-dark rounded-lg">
+    <div class="text-center">
+        Distribution by gender
+    </div>
+    <div class="">
+        <div style="display: block" *ngIf="doughnutChartData.length > 0">
+            <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType">
+            </canvas>
+        </div>
+    </div>
+</div>
+
+<div class="average-note rounded-lg">
+  <div class="text-center">
+      <h1 class="average">
+          {{ average |  number: '1.1-2' }}
+      </h1><br>
+      Average Note <br>
+  </div>
+</div>
+<!--   
+<div class="top-movies bg-dark rounded-lg ">
+  <div class="text-center">
+      Top 20 des films
+  </div>
+  <div class="col-12">
+      <div class="row border-bottom pb-2 mt-4" *ngFor="let movie of movies">
+          <div class="col-9">
+              {{ //movie.//title }}
+          </div>
+          <div class="col-3">
+              {{ //movie.//note }}
+          </div>
+      </div>
+  </div>
+</div>
+</div> -->

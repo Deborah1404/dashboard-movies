@@ -1,0 +1,30 @@
+.sidenav-container {
+  height: 100%;
+
+}
+
+.sidenav {
+  width: 200px;
+  background: linear-gradient(130deg,rgb(3, 59, 73), black);
+  border: none;
+  //background: linear-gradient(#323232, white);
+  //background-color: #323232;
+}
+
+.mat-list-item {
+  color: #dddddd;
+  text-shadow: black 1px 1px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar{
+font-size: 25px;;
+}
+
+
+.title {
+  color: black;
+}
