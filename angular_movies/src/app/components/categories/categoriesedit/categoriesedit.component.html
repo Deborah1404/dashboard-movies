@@ -1,4 +1,4 @@
-<h1>Edit Category</h1>
+<h1 class="h1-list">Edit Category</h1>
 
 <div class="container">
     <div class="form-group">
@@ -6,6 +6,6 @@
         <input type="text" [(ngModel)]="category.name" id="name" class="form-control">
     </div>
 
-    <button type="submit" class="btn-btn-primary" [disabled]="!category.name" (click)="onEdit()">Edit</button>
+    <button type="submit" mdbBtn class="relative waves-light bgc-blue send-button rounded-lg" mdbWavesEffect [disabled]="!category.name" (click)="onEdit()">Edit</button>
     
 </div>

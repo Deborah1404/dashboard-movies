@@ -1,4 +1,4 @@
-/* import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Actor } from './../../../models/actor.model';
 import { ActorsService } from './../../../services/actors.service';
 import { GendersService } from './../../../services/genders.service';
@@ -64,7 +64,8 @@ export class ActorseditComponent implements OnInit {
 
     
     this.actorsService.update(formData, this.id)
-      .subscribe(actor => {
+      .subscribe(
+        (actor) => {
           this.router.navigate(['/actors']);
         }
       );
@@ -78,103 +79,106 @@ export class ActorseditComponent implements OnInit {
   }
 
 }
- */
 
-import { Component, OnInit } from '@angular/core';
 
-import { Router, ActivatedRoute } from '@angular/router';
-import { ActorsService } from '../../../services/actors.service';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { CountriesService } from '../../../services/countries.service';
-import { Country } from '../../../models/country.model';
-import { Gender } from '../../../models/gender.model';
-import { GendersService } from '../../../services/genders.service';
-import { HttpClient } from '@angular/common/http';
+// import { Component, OnInit } from '@angular/core';
 
-import {DatePipe} from '@angular/common';
+// import { Router, ActivatedRoute } from '@angular/router';
+// import { ActorsService } from '../../../services/actors.service';
+// import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+// import { CountriesService } from '../../../services/countries.service';
+// import { Country } from '../../../models/country.model';
+// import { Gender } from '../../../models/gender.model';
+// import { GendersService } from '../../../services/genders.service';
+// import { HttpClient } from '@angular/common/http';
 
-@Component({
-  selector: 'app-actorsedit',
-  templateUrl: './actorsedit.component.html',
-  styleUrls: ['./actorsedit.component.scss']
-})
-export class ActorseditComponent implements OnInit {
+// import {DatePipe} from '@angular/common';
 
-  countries: Country[];
-  genders: Gender[];
-  id: string;
-  file: File;
-  avatar: string;
+// @Component({
+//   selector: 'app-actorsedit',
+//   templateUrl: './actorsedit.component.html',
+//   styleUrls: ['./actorsedit.component.scss']
+// })
+// export class ActorsEditComponent implements OnInit {
 
-  actorForm = new FormGroup({
-    name: new FormControl(),
-    firstname: new FormControl(),
-    birth: new FormControl(),
-    picture: new FormControl(),
-    CountryId: new FormControl(),
-    GenderId: new FormControl(),
-  });
+//   countries: Country[];
+//   genders: Gender[];
+//   id: string;
+//   file: File;
+//   avatar: string;
 
-  constructor(
-    private actorService: ActorsService,
-    private countriesService: CountriesService,
-    private gendersService: GendersService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private datePipe: DatePipe,
-  ) {
-    this.route.params
-    .subscribe(params => this.id = params.id);
-  }
+//   actorForm = new FormGroup({
+//     name: new FormControl(),
+//     firstname: new FormControl(),
+//     birth: new FormControl(),
+//     picture: new FormControl(),
+//     CountryId: new FormControl(),
+//     GenderId: new FormControl(),
+//   });
 
-  ngOnInit(): void {
-    this.getActorDetail(this.id);
-    this.getCountries();
-    this.getGenders();
-  }
+//   constructor(
+//     private actorService: ActorsService,
+//     private countriesService: CountriesService,
+//     private gendersService: GendersService,
+//     private router: Router,
+//     private route: ActivatedRoute,
+//     private datePipe: DatePipe,
+//   ) {
+//     this.route.params
+//     .subscribe(params => this.id = params.id);
+//   }
 
-  // Get the actor
-  getActorDetail(id: string) {
-    this.actorService.getActorDetail(id)
-    .subscribe( data => {
-      console.log(data);
-      this.actorForm.patchValue({
-            name: data.name,
-            firstname: data.firstname,
-            birth: this.datePipe.transform(data.birth, 'yyyy-MM-dd'),
-            CountryId: data.CountryId,
-            GenderId: data.GenderId,
-      });
+//   ngOnInit(): void {
+//     this.getActorDetail(this.id);
+//     this.getCountries();
+//     this.getGenders();
+//   }
+
+//   // Get the actor
+//   getActorDetail(id: string) {
+//     this.actorService.getActorDetail(id)
+//     .subscribe( data => {
+//       console.log(data);
+//       this.actorForm.patchValue({
+//             name: data.name,
+//             firstname: data.firstname,
+//             birth: this.datePipe.transform(data.birth, 'yyyy-MM-dd'),
+//             CountryId: data.country,
+//             GenderId: data.gender,
+//       });
       
-    });
-  }
+//     });
+//   }
 
-  getCountries(){
-    this.countriesService.getCountries()
-    .subscribe(data => this.countries = data);
-  }
+//   getCountries(){
+//     this.countriesService.getCountries()
+//     .subscribe(data => this.countries = data);
+//   }
 
-  getGenders(){
-    this.gendersService.getGenders()
-    .subscribe(data => this.genders = data);
-  }
+//   getGenders(){
+//     this.gendersService.getGenders()
+//     .subscribe(data => this.genders = data);
+//   }
 
+//   onFileChanged(event) {
+//     this.file = event.target.files[0];
+//   }
 
-  onSubmit() {
-    const formData = new FormData();
-    formData.append('name', this.actorForm.get('name').value);
-    formData.append('firstname', this.actorForm.get('firstname').value);
-    formData.append('birth', this.actorForm.get('birth').value);
-    formData.append('CountryId', this.actorForm.get('CountryId').value);
-    formData.append('GenderId', this.actorForm.get('GenderId').value);
-    if(this.file != undefined)
-    {
-      formData.append('picture', this.file, this.file.name);
-    }
+//   onSubmit() {
+//     const formData = new FormData();
+//     formData.append('name', this.actorForm.get('name').value);
+//     formData.append('firstname', this.actorForm.get('firstname').value);
+//     formData.append('birth', this.actorForm.get('birth').value);
+//     formData.append('CountryId', this.actorForm.get('CountryId').value);
+//     formData.append('GenderId', this.actorForm.get('GenderId').value);
+//     if(this.file != undefined)
+//     {
+//       formData.append('picture', this.file, this.file.name);
+//     }
 
-    this.actorService.update(formData, this.id)
-        .subscribe(actor => {
-          this.router.navigate(['/actors']);
-        });
-    }
-}
+//     this.actorService.update(formData, this.id)
+//         .subscribe(actor => {
+//           this.router.navigate(['/actors']);
+//         });
+//     }
+// }

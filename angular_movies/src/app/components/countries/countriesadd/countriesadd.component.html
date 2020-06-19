@@ -6,7 +6,7 @@
         <input type="text" [(ngModel)]="country.name" id="name" class="form-control">
     </div>
 
-    <button type="submit" class="btn-btn-primary" [disabled]="!country.name" (click)="onSave()">Add</button>
+    <button type="submit" mdbBtn class="relative waves-light bgc-blue send-button rounded-lg" mdbWavesEffect  [disabled]="!country.name" (click)="onSave()">Add</button>
     
 </div>
 

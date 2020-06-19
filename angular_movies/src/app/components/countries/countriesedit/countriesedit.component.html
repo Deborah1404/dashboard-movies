@@ -1,4 +1,4 @@
-<h1>Edit Country</h1>
+<h1 class="h1-list">Edit Country</h1>
 
 <div class="container">
     <div class="form-group">
@@ -6,7 +6,7 @@
         <input type="text" [(ngModel)]="country.name" id="name" class="form-control">
     </div>
 
-    <button type="submit" class="btn-btn-primary" [disabled]="!country.name" (click)="onEdit()">Edit</button>
+    <button type="submit" mdbBtn class="relative waves-light bgc-blue send-button" mdbWavesEffect [disabled]="!country.name" (click)="onEdit()">Edit</button>
     
 </div>
 

@@ -41,7 +41,7 @@
 </div>
 
 <div>
-  <div class="ranking-category bg-dark rounded-lg ">
+  <div class="ranking-category rounded-lg ">
     <div class="text-center">
         ranking of categories
     </div>
@@ -50,6 +50,7 @@
             <canvas baseChart
                 [data]="barChartData"
                 [labels]="barChartLabels"
+                [colors] = "barChartColors"
                 [chartType]="barChartType"
                 [legend]="false"
                 [options]="barChartOption">
@@ -61,7 +62,7 @@
 </div>
 
 <div>
-  <div class="gender-actor bg-dark rounded-lg">
+  <div class="gender-actor rounded-lg">
     <div class="text-center">
         Distribution by gender
     </div>
@@ -70,7 +71,8 @@
             <canvas baseChart
                 [data]="doughnutChartData"
                 [labels]="doughnutChartLabels"
-                [chartType]="doughnutChartType">
+                [chartType]="doughnutChartType"
+                [colors]="doughnutColors">
             </canvas>
         </div>
     </div>
